@@ -21,36 +21,45 @@ int main(int argc, const char * argv[]) {
     /* utilisation des chaînes de caractères mode c++ : objet de type string  */
     /**************************************************************************/
     cout << "+++++++++++++++++++++++++++++++++++++++++++++++++++++"  << endl;
-    cout << "Utilisation en C++ de l'objet de type string " << endl;
+    cout << "\tUtilisation en C++ de l'objet de type string " << endl;
     string maChaine ("Les sanglots longs des violons de l'automne ");
     cout << maChaine << endl;
     
-    // affiche la longueur
-    cout << "de longeur : " << maChaine.length() << endl ;
+    // calcul de la longueur : utilisation de la méthode length()
+    cout << "\tde longeur : " << maChaine.length() << endl ;
     
-    // cherche la chaîne "violons" dans maChaine
-    cout << "  est-ce qu'il y a violons dedans ? " << maChaine.find("violons") << endl;
+    // cherche la chaîne "violons" dans maChaine : utilisation de la méthode find()
+    cout << " est-ce qu'il y a violons dedans ? " << maChaine.find("violons") << endl;
     if (maChaine.find("violons") == string::npos )
     {
-        cout << "  violons n'apparaît pas dans maChaine " <<endl << endl;
+        cout << " violons n'apparaît pas dans maChaine " <<endl << endl;
     }
-    cout << "  est-ce qu'il y a guitares dedans ? " << maChaine.find("guitares") << endl;
+    cout << " est-ce qu'il y a guitares dedans ? " << maChaine.find("guitares") << endl;
     if (maChaine.find("guitares") == string::npos )
     {
-        cout << "  guitares n'apparaît pas dans maChaine " <<endl << endl;
+        cout << " guitares n'apparaît pas dans maChaine " <<endl << endl;
     }
     
     // je concatene avec l'operateur '+'
     maChaine += "\nBlessent mon coeur d'une langueur monotone";
     
-    cout << "ma nouvelle chaine après concaténation " << endl;
+    cout << "\tMa nouvelle chaine après concaténation " << endl;
     cout << maChaine << endl;
-    cout << "de longueur "  << maChaine.length() << endl;
+    cout << "\tde longueur "  << maChaine.length() << endl <<endl ;
+    
+    // effacer des caractères : utilisation de la méthode erase()
+    // effacement de la première ligne de longueur 23
+    maChaine.erase(0,44);
+    cout << "\tMa nouvelle chaîne raccourcie par l'avant " << endl;
+    cout << maChaine << endl;
+    cout << "\tde longeur : " << maChaine.length() << endl ;
 
-    // Utilisation des chaînes de caractères C-like
-    char maChaineC[] = "Les sanlots longs des violons de l'automne ";
+    /**************************************************************************/
+    /* utilisation des chaînes de caractères mode c++ : objet de type string  */
+    /**************************************************************************/
+    char maChaineC[] = "Les sanglots longs des violons de l'automne ";
     char *trouveChaine = nullptr;
-
+    cout << endl << endl;
     cout << "cherche chaine c " << strstr(maChaineC, "violons") << endl;
     
     //decoupe (tokenzie) avec 
