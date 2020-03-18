@@ -25,6 +25,27 @@ int main(int argc, const char * argv[]) {
     string maChaine ("Les sanglots longs des violons de l'automne ");
     cout << maChaine << endl;
     
+    // utilisation pour le TP
+    string requete("INSERT INTO mesures  (temperature) VALUES (");
+    char buf[255] = "Temp[0]: +18.06 degC";
+    string maTemperature ("NULL");
+    string buffer(buf);
+    cout << "ma ligne : " << buffer << endl;
+    if ( buffer.find("Temp[0]") != string::npos  )
+    {
+    	cout << "Victoire on a la temperature   " << endl ;
+    	buffer.replace(0, 9, "");
+    	cout << "ma ligne apres replace 1: -" << buffer << "- " << endl;
+    	buffer.replace(6, 9, "");
+    	cout << "ma ligne apres replace 2: -" << buffer << "- " << endl;
+
+    }
+    
+    // il reste à créer la requete de la forme
+    // INSERT INTO mesures (temperature) VALUES (+18.06);
+    requete = requete + buffer;
+    cout << " requete avec le + " << requete << endl;
+    
     // calcul de la longueur : utilisation de la méthode length()
     cout << "\tde longeur : " << maChaine.length() << endl ;
     
